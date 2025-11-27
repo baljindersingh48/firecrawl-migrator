@@ -15,7 +15,6 @@ export async function POST(request: NextRequest) {
 
     const apiKey = process.env.FIRECRAWL_API_KEY
     if (!apiKey || apiKey === 'fc-YOUR_API_KEY') {
-      console.log("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ")
       return NextResponse.json(
         { error: 'Firecrawl API key not configured' },
         { status: 500 }
@@ -77,7 +76,6 @@ export async function POST(request: NextRequest) {
     })
 
   } catch (error) {
-    console.log("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ", error)
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Failed to map website' },
       { status: 500 }
